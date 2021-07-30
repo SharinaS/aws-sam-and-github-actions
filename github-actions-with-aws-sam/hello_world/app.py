@@ -25,22 +25,6 @@ def lambda_handler(event, context):
         Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
 
-    # try:
-    #     ip = requests.get("http://checkip.amazonaws.com/")
-    # except requests.RequestException as e:
-    #     # Send some context about this error to Lambda Logs
-    #     print(e)
-
-    #     raise e
-
-    # return {
-    #     "statusCode": 200,
-    #     "body": json.dumps({
-    #         "message": "hello world",
-    #         # "location": ip.text.replace("\n", "")
-    #     }),
-    # }
-
     response_body = "<HTML><Title>SAM and GitHub Actions</Title><h1>SAM and GitHub Actions</h1><p>A tiny serverless app to explore concepts</p></HTML>"
 
     return {
@@ -51,5 +35,4 @@ def lambda_handler(event, context):
         }
     }
 
-# TODO: Set up the lambda to read an html file stored outside of the lambda
-# htmlFile = open('content/html-file.html', 'r')
+

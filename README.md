@@ -61,10 +61,17 @@ sam local start-api
 
 This tells AWS SAM to launch a Docker container with a mock API Gateway endpoint listening on localhost:3000.
 
-Use curl to call the hello API (in a second terminal tab) or paste the URL into a browser window. You should see a `{"message": "hello world"}` either way.
+Use curl to call the hello API (in a second terminal tab) or paste the URL into a browser window. You should see the the output of HTML either way.
 
 ```bash
 curl http://127.0.0.1:3000/hello
 ```
 
 The `/hello` page is defined by the template file, which defines the HelloWorldEvent as having as a path property of `/hello`.
+
+### Update the Lambda Code
+
+The Lambda function initially had a simple JSON output of `{hello world}` from a `"body": json.dumps...` after being created by the SAM init command. I updated the Lambda to have a return of HTML instead.
+
+#TODO: Set up the lambda to read an html file stored outside of the lambda
+htmlFile = open('content/html-file.html', 'r')
